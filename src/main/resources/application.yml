@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: support-system
+  
+  datasource:
+    url: jdbc:postgresql://localhost:5432/support_system
+    username: postgres
+    password: Diku@2023
+    driver-class-name: org.postgresql.Driver
+  
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  
+  flyway:
+    enabled: false
+
+server:
+  port: 8080
+  error:
+    include-message: always
+
+jwt:
+  secret: your-secret-key-change-this-in-production-minimum-256-bits
+  access-token-expiration: 3600000  # 1 hour
+  refresh-token-expiration: 604800000  # 7 days
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
